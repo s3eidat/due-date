@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; media-src 'self' data: blob:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; form-action 'none'; base-uri 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Due Date — Pregnancy Due Date Calculator &amp; Week by Week | S3eidat Tools</title>
+<meta name="description" content="Free pregnancy due date calculator from your last period (any cycle length), conception date or IVF transfer (day 3 or day 5). Current week, trimester, milestone timeline and Hijri dates. Private, nothing leaves your browser.">
+<meta property="og:title" content="Due Date — pregnancy due date calculator">
+<meta property="og:description" content="Due date, current week, trimester and a timeline. Runs 100% in your browser.">
+<link rel="icon" href="kit/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="kit/kit.css">
+<link rel="stylesheet" href="app.css">
+<script src="kit/kit.js"></script>
+<!--s3:seo-->
+<link rel="canonical" href="https://s3eidat.github.io/due-date/">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0d0f12">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="S3eidat Tools">
+<meta property="og:url" content="https://s3eidat.github.io/due-date/">
+<meta property="og:image" content="https://s3eidat.github.io/due-date/screenshot.png">
+<meta property="og:image:width" content="1280"><meta property="og:image:height" content="800">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Due Date — Pregnancy due date and week by week">
+<meta name="twitter:description" content="Pregnancy due date and week by week. Free, private and runs 100% in your browser: no sign-up, no uploads.">
+<meta name="twitter:image" content="https://s3eidat.github.io/due-date/screenshot.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Due Date", "url": "https://s3eidat.github.io/due-date/", "description": "Pregnancy due date and week by week. Free, private and runs 100% in your browser: no sign-up, no uploads.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "image": "https://s3eidat.github.io/due-date/screenshot.png", "author": {"@type": "Person", "name": "s3eidat", "url": "https://github.com/s3eidat"}}</script>
+<!--/s3:seo-->
+</head>
+<body data-tool="due-date">
+<main class="s3-main">
+  <section class="s3-hero">
+    <h1>Due Date</h1>
+    <p>Estimate a pregnancy due date from the last period, the conception date or an IVF transfer, and see the current week, trimester and a week-by-week timeline.</p>
+  </section>
+
+  <div class="dd-grid">
+    <section class="card stack">
+      <h2>Calculate from</h2>
+      <div class="seg" id="method" role="group" aria-label="Method">
+        <button aria-pressed="true" data-v="lmp">Last period</button>
+        <button aria-pressed="false" data-v="conception">Conception</button>
+        <button aria-pressed="false" data-v="ivf">IVF transfer</button>
+      </div>
+      <label class="field"><span id="dateLbl">First day of your last period</span>
+        <input class="input" type="date" id="date" min="2000-01-01" max="2100-12-31">
+      </label>
+      <label class="field" id="cycleWrap">Average cycle length (days)
+        <div class="row nowrap dd-cycle">
+          <input type="range" id="cycleR" min="20" max="45" value="28" aria-label="Cycle length slider">
+          <input class="input dd-num" id="cycle" inputmode="numeric" value="28" aria-label="Cycle length in days">
+        </div>
+      </label>
+      <div class="field" id="ivfWrap" hidden>Embryo age at transfer
+        <div class="seg" id="ivfDay" role="group" aria-label="Embryo age">
+          <button aria-pressed="false" data-v="3">Day 3</button>
+          <button aria-pressed="true" data-v="5">Day 5 (blastocyst)</button>
+        </div>
+      </div>
+      <label class="check"><input type="checkbox" id="hijri"> Show Hijri dates <span lang="ar" class="faint">التاريخ الهجري</span></label>
+      <p class="faint dd-how" id="how"></p>
+    </section>
+
+    <section class="card stack">
+      <div class="dd-res" id="res" aria-live="polite"></div>
+      <div class="dd-bar" id="bar" hidden><div class="dd-fill" id="fill"></div><span class="dd-mark m1"></span><span class="dd-mark m2"></span></div>
+      <div class="dd-barlbl faint" id="barLbl" hidden><span>1st trimester</span><span>2nd</span><span>3rd</span></div>
+      <div class="stats" id="stats"></div>
+      <div class="dd-kv" id="kv"></div>
+      <div class="row end"><button class="btn small" id="copy"><svg class="i"><use href="#i-copy"/></svg>Copy</button></div>
+    </section>
+  </div>
+
+  <section class="card mt">
+    <h2>Timeline <small>general milestones, your care team's schedule may differ</small></h2>
+    <ol class="dd-tl" id="tl"></ol>
+  </section>
+
+  <p class="dd-note mt"><b>Not medical advice.</b> This is an estimate from a standard formula (Naegele's rule, 280 days from the last period). Only about 1 in 20 babies arrive on the due date; an ultrasound dating scan is more accurate. Talk to your doctor or midwife about your own pregnancy.</p>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

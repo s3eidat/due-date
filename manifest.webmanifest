@@ -1,0 +1,18 @@
+{
+  "name": "Due Date — S3eidat Tools",
+  "short_name": "Due Date",
+  "description": "Pregnancy due date and week by week",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0d0f12",
+  "theme_color": "#0d0f12",
+  "icons": [
+    {
+      "src": "kit/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
